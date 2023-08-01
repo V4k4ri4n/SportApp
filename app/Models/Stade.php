@@ -17,7 +17,7 @@ class Stade extends Model
      * @var string[]
      */
     protected $fillable = [
-        'satde_id',
+        'api_stade_id',
         'nom',
         'adresse',
         'ville',
@@ -68,7 +68,7 @@ class Stade extends Model
      * @var string[]
      */
     protected $attributes = [
-        'capcite' => 0,
+        'capacite' => 0,
         'surface' => 'herbe',
         'image'   => ''
     ];
@@ -88,7 +88,7 @@ class Stade extends Model
      *  Retourne l'equipe associée au stade
      * @return BelongsTo
      */
-    public function team(): BelongsTo
+    public function equipe(): BelongsTo
     {
         return $this->belongsTo(Equipe::class);
     }

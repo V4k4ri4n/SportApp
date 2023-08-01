@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,14 +20,14 @@ class Equipe extends Model
      * @var string[]
      */
     protected $fillable = [
-        'equipe_id',
+        'api_equipe_id',
         'nom',
         'code',
         'pays',
-        'foundation',
+        'fondation',
         'national',
         'logo',
-        'equipe_id',
+        'ligue_id',
         'pays_id'
     ];
 
@@ -71,7 +72,7 @@ class Equipe extends Model
      * @var string[]
      */
     protected $attributes = [
-        'foundation' => '0000',
+        'fondation' => '0000',
         'national'   => false,
         'logo'       => ''
     ];
@@ -82,7 +83,7 @@ class Equipe extends Model
      * @var string[]
      */
     protected  $casts = [
-        'foundation' => 'datetime:Y',
+        'fondation' => 'datetime:Y',
         'created_at' => 'datetime:Y-m-d',
         'updated_at' => 'datetime:Y-m-d',
         'deleted_at' => 'datetime:Y-m-d',
@@ -92,7 +93,7 @@ class Equipe extends Model
      * Retourne le pays à laquelle l'équipe est associé
      * @return BelongsTo
      */
-    public function country(): BelongsTo
+    public function pays(): BelongsTo
     {
         return $this->belongsTo(Pays::class);
     }
@@ -102,7 +103,7 @@ class Equipe extends Model
      *
      * @return BelongsTo
      */
-    public function league(): BelongsTo
+    public function ligue(): BelongsTo
     {
         return $this->belongsTo(Ligue::class);
     }
@@ -113,7 +114,7 @@ class Equipe extends Model
      *
      * @return HasOne
      */
-    public function venue(): HasOne
+    public function stade(): HasOne
     {
         return $this->hasOne(Stade::class);
     }
@@ -123,7 +124,7 @@ class Equipe extends Model
      *
      * @return HasMany
      */
-    public function players(): HasMany
+    public function joueurs(): HasMany
     {
         return $this->hasMany(Joueur::class);
     }

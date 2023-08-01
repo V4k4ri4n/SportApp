@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('stades', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('stade_id');
+            $table->unsignedInteger('api_stade_id');
             $table->string('nom', 250);
             $table->string('adresse',250);
             $table->string('ville', 250);

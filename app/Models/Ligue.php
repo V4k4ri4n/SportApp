@@ -17,7 +17,7 @@ class Ligue extends Model
      *
      * @var string[]
      */
-    protected $fillable = ['ligue_id','nom','type','logo','pays_id'];
+    protected $fillable = ['api_ligue_id','nom','type','logo','pays_id'];
 
     /**
      * The primary key associated with the table
@@ -79,7 +79,7 @@ class Ligue extends Model
      * Retourne le pays a laquelle la ligue est associé
      *
      * @return BelongsTo
-     */public function country(): BelongsTo
+     */public function pays(): BelongsTo
 {
     return $this->belongsTo(Pays::class);
 }
@@ -88,7 +88,7 @@ class Ligue extends Model
      * Retourne toutes les équipes associées à l'id de la ligue
      *
      * @return HasMany
-     */public function teams(): HasMany
+     */public function equipes(): HasMany
 {
     return $this->hasMany(Equipe::class);
 }
@@ -97,7 +97,7 @@ class Ligue extends Model
      * Retourne tous les joueurs associés à l'id de la ligue
      *
      * @return HasMany
-     */public function players(): HasMany
+     */public function joueurs(): HasMany
 {
     return $this->hasMany(Joueur::class);
 }

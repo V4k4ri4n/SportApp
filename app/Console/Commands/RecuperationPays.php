@@ -15,7 +15,7 @@ class RecuperationPays extends Command
      *
      * @var string
      */
-    protected $signature = 'app:recuperation-pays';
+    protected $signature = 'app:get-pays';
 
     /**
      * The console command description.

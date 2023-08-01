@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('equipe_id');
+            $table->unsignedInteger('api_equipe_id');
             $table->string('nom',250);
-            $table->char('code', 3);
+            $table->char('code', 3)->nullable();
             $table->string('pays',150);
-            $table->string('foundation',4)->nullable();
+            $table->string('fondation',4)->nullable();
             $table->boolean('national')->default(false);
             $table->string('logo',250)->nullable();
             $table->foreignIdFor(Ligue::class)->constrained()->cascadeOnDelete();

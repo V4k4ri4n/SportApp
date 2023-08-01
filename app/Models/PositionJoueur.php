@@ -80,7 +80,7 @@ class PositionJoueur extends Model
      *
      * @return BelongsTo
      */
-    public function player(): BelongsTo
+    public function joueur(): BelongsTo
     {
         return $this->belongsTo(Player::class);
     }

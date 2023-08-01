@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('ligues', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('ligue_id');
+            $table->unsignedInteger('api_ligue_id');
             $table->string('nom',100);
             $table->string('type', 50)->nullable();
             $table->string('logo', 250)->nullable();

@@ -16,12 +16,12 @@ return new class extends Migration
     {
         Schema::create('joueurs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('joueur_id');
+            $table->unsignedInteger('api_joueur_id');
             $table->string('nom_complet',250);
             $table->string('prenom',250);
             $table->string('nom',250);
-            $table->unsignedInteger('age');
-            $table->date('date_naissansce')->nullable();
+            $table->unsignedInteger('age')->nullable();
+            $table->date('date_naissance')->nullable();
             $table->string('ville_naissance',70)->nullable();
             $table->string('pays_naissance',70)->nullable();
             $table->string('nationalite',70);

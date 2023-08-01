@@ -18,7 +18,7 @@ class Joueur extends Model
      * @var string[]
      */
     protected $fillable = [
-        'joueur_id',
+        'api_joueur_id',
         'nom_complet',
         'prenom',
         'nom',

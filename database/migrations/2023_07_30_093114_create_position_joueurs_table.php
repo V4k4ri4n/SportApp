@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('joueur_position', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('numero');
+            $table->unsignedInteger('numero')->nullable()->default(0);
             $table->string('position',25);
             $table->foreignIdFor(Joueur::class)->constrained()->cascadeOnDelete();
             $table->timestamps();

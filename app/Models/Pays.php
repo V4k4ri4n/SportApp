@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
 class Pays extends Model
 {
     use HasFactory, softDeletes;
@@ -104,7 +103,7 @@ class Pays extends Model
      *
      * @return HasMany
      */
-    public function joueur(): HasMany
+    public function joueurs(): HasMany
     {
         return $this->hasMany(Joueur::class);
     }
